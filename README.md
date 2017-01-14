@@ -16,6 +16,11 @@ instead of
 
 ```js
 const { PORT, CONSUMER_KEY, CONSUMER_SECRET, APP_URL } = process.env
+
+if (PORT == null) throw new Error('\'PORT\' environment variable is not set.')
+if (CONSUMER_KEY == null) throw new Error('\'CONSUMER_KEY\' environment variable is not set.')
+if (CONSUMER_SECRET == null) throw new Error('\'CONSUMER_SECRET\' environment variable is not set.')
+if (APP_URL == null) throw new Error('\'APP_URL\' environment variable is not set.')
 ```
 
 ### Exception example:
