@@ -1,0 +1,24 @@
+{
+  "name": "perfect-env",
+  "version": "1.0.0",
+  "description": "Undefined? Who?",
+  "main": "index.js",
+  "scripts": {
+    "lint": "standard",
+    "pretest": "npm run lint --silent",
+    "test": "mocha --growl",
+    "coverage": "istanbul cover node_modules/mocha/bin/_mocha",
+    "ci": "dot-only-hunter && npm run pretest && npm run coverage && cat ./coverage/lcov.info | coveralls",
+    "prepublish": "npm run test",
+    "watch": "chokidar 'src/**/*.js' 'test/**/*.js' -c 'npm run test'"
+  },
+  "author": "David da Silva <dasilvacontin@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "coveralls": "^2.11.12",
+    "dot-only-hunter": "^1.0.2",
+    "istanbul": "^1.0.0-alpha.2",
+    "mocha": "^3.0.2",
+    "unexpected": "^10.15.1"
+  }
+}
